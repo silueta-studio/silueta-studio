@@ -82,7 +82,7 @@ def test_cli_novo_recusa_pasta_com_ficheiros(historia):
 def test_qa_apanha_aleatoriedade_glifos_e_ritmo_de_leitura(tmp_path):
     (tmp_path / "cenas.py").write_text("import numpy as np\nx = np.random.rand()\nr = np.random.default_rng(3)\n", encoding="utf-8")
     ok, linhas = qa.static_determinism(tmp_path); assert not ok and len(linhas) == 1
-    ok, linhas = qa.glyphs(["¿Qué año? ¡Sí! «ñ» …", "★"]); assert not ok and "U+2605" in linhas[0]
+    ok, linhas = qa.glyphs(["¿Qué año? ¡Sí! «ñ» …", ""]); assert not ok and "U+E123" in linhas[0]   # uso privado: nenhuma fonte o tem
     ok, _ = qa.glyphs(["¿Qué año? ¡Sí! «ñ» … ÁÉÍÓÚü — 6.300 €"]); assert ok
     T = [{"id": "S01", "start": 0, "dur": 2}]; ws = {"S01": [[f"p{i}", i * 0.2, i * 0.2 + 0.15] for i in range(10)]}
     ok, _ = qa.pace(T, ws); assert not ok
