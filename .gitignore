@@ -1,0 +1,13 @@
+*.egg-info/
+__pycache__/
+.venv/
+render_partes/
+prova/
+prova.png
+final.mp4
+fotograma_*.png
+.limpo/
+.pytest_cache/
+!docs/demo.gif
+!docs/prova.png
+build/

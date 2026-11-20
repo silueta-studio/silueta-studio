@@ -1,0 +1,9 @@
+{
+  "titulo": "El farero (ejemplo de ficción)",
+  "planos": [
+    {"id": "S01", "dur": 4.8, "voz": "Durante cuarenta años, un hombre encendió el mismo faro cada noche.", "texto": "40 AÑOS", "cola": 0.2},
+    {"id": "S02", "dur": 3.9, "voz": "Nunca supo si alguien miraba su luz.", "texto": "CADA NOCHE", "cola": 0.2},
+    {"id": "S03", "dur": 4.6, "voz": "Hasta que un barco volvió, solo para darle las gracias.", "texto": "GRACIAS", "cola": 0.3}
+  ],
+  "transicoes": {"S02": ["dissolve", 0.5], "S03": ["fadeblack", 0.4]}
+}
