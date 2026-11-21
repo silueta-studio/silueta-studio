@@ -7,6 +7,8 @@
 
 [English](#english) · [Español](#español)
 
+**Pro pack** (more scene styles, hook templates) is coming: [join the waitlist](https://docs.google.com/forms/d/e/1FAIpQLScaJyV3WYKFIIE3Xe1ND2M30WvkGxEXsLLKiMkHln_PMXMXKA/viewform) · [lista de espera](https://docs.google.com/forms/d/e/1FAIpQLScaJyV3WYKFIIE3Xe1ND2M30WvkGxEXsLLKiMkHln_PMXMXKA/viewform)
+
 <p align="center"><img src="https://raw.githubusercontent.com/silueta-studio/silueta-studio/main/docs/demo.gif" width="270" alt="10-second demo: a lighthouse at sunset, at night and at dawn, with karaoke captions"></p>
 
 ---
