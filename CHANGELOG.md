@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.1 — unreleased
+## 0.1.1 — 2026-11-21
 - `silueta qa`: the loudness gate is **skipped** (not failed) while a story has no voice yet, so the example finishes green
   on a fresh install. With real timings and no audio track it still fails.
 - CI on Ubuntu, Windows and macOS (Python 3.10 and 3.12).
