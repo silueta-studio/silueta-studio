@@ -1,6 +1,7 @@
 # Silueta Studio
 
 [![tests](https://github.com/silueta-studio/silueta-studio/actions/workflows/testes.yml/badge.svg)](https://github.com/silueta-studio/silueta-studio/actions/workflows/testes.yml)
+[![PyPI](https://img.shields.io/pypi/v/silueta-studio)](https://pypi.org/project/silueta-studio/)
 
 **Vertical story videos — 2D silhouettes, rim light, parallax and karaoke captions — drawn in pure Python and directed by Claude Code.**
 
@@ -27,8 +28,13 @@ and automatic quality gates. It is the engine behind a faceless "true stories" c
 - **QA gates**: seedless randomness, missing glyphs, reading speed, dead air, too-short shots, flashes (> 3/s fails), loudness/true peak.
 - **Claude Code setup**: `CLAUDE.md` with the craft rules, and 4 agents — `researcher`, `scriptwriter`, `scene-designer`, `render-qa`.
 
-### Install (≈ 10 min)
+### Install (≈ 1 min)
 Needs Python ≥ 3.10 and [ffmpeg](https://ffmpeg.org/download.html) on your PATH.
+```
+pip install silueta-studio
+silueta -h
+```
+To work with Claude Code, clone the repo instead: it adds `CLAUDE.md` and the 4 agents.
 ```
 git clone https://github.com/silueta-studio/silueta-studio && cd silueta-studio
 python -m venv .venv
@@ -85,8 +91,9 @@ empaquetado para que [Claude Code](https://claude.com/claude-code) investigue, e
   destellos (> 3/s falla), sonoridad y pico real.
 - **Claude Code**: `CLAUDE.md` con las reglas del oficio y 4 agentes — `researcher`, `scriptwriter`, `scene-designer`, `render-qa`.
 
-### Instalación (≈ 10 min)
-Python ≥ 3.10 y [ffmpeg](https://ffmpeg.org/download.html) en el PATH; los comandos son los de arriba.
+### Instalación (≈ 1 min)
+Python ≥ 3.10 y [ffmpeg](https://ffmpeg.org/download.html) en el PATH. Solo la herramienta: `pip install silueta-studio`.
+Para trabajar con Claude Code, clona el repositorio (trae `CLAUDE.md` y los 4 agentes); los comandos son los de arriba.
 Opcional: [WhisperX](https://github.com/m-bain/whisperX) en su propio venv para los tiempos reales de la voz (`--python`).
 
 ### Hacer un vídeo
