@@ -146,6 +146,12 @@ def rhythm(video: Path, max_still=2.0, min_shot=0.3, max_flashes=3):
 
 
 # ------------------------------------------------------------------ loudness
+def has_audio(media: Path) -> bool:
+    r = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=index", "-of", "csv=p=0", str(media)],
+                       capture_output=True, text=True)
+    return bool(r.stdout.strip())
+
+
 def loudness(media: Path, T=None, target=-14.0, peak_max=-1.5):
     SR = 48000
     r = subprocess.run(["ffmpeg", "-v", "error", "-i", str(media), "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"], capture_output=True)
@@ -180,12 +186,19 @@ def run(folder, dynamic=True) -> bool:
         gates.append(("determinism (frames)", _dyn))
     gates.append(("glyphs", lambda: glyphs(texts)))
     if T and wp.exists(): gates.append(("pace", lambda: pace(T, json.loads(wp.read_text(encoding="utf-8")))))
-    if final.exists(): gates += [("rhythm", lambda: rhythm(final)), ("loudness", lambda: loudness(final, T))]
+    skipped = []
+    if final.exists():
+        gates.append(("rhythm", lambda: rhythm(final)))
+        if T is None and not has_audio(final):      # no voice recorded yet: nothing to measure, not a failure
+            skipped.append(("loudness", "no voice yet (timings are estimated): record voz/s01.mp3..., then `silueta align` and `silueta mix`"))
+        else:
+            gates.append(("loudness", lambda: loudness(final, T)))
     failed = 0
     for name, fn in gates:
         ok, lines = fn(); failed += not ok
         print(f"\n  {name.upper()}: {'ok' if ok else 'FAILED'}")
         for line in lines: print("     " + line)
+    for name, why in skipped: print(f"\n  {name.upper()}: skipped\n     {why}")
     if not final.exists(): print("\n  (rhythm and loudness run after `silueta render`)")
     print(f"\n  {'ALL GATES PASSED' if not failed else f'{failed} GATE(S) FAILED'}\n")
     return not failed

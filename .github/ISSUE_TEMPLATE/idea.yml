@@ -1,0 +1,8 @@
+name: Idea or scene request
+description: A new effect, scene element, transition or workflow
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes: {label: What would you like to make?, description: "Describe the shot or the feature. Links to your own videos are welcome."}
+    validations: {required: true}

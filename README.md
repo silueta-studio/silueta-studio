@@ -6,7 +6,7 @@
 
 [English](#english) · [Español](#español)
 
-<p align="center"><img src="docs/demo.gif" width="270" alt="10-second demo: a lighthouse at sunset, at night and at dawn, with karaoke captions"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/silueta-studio/silueta-studio/main/docs/demo.gif" width="270" alt="10-second demo: a lighthouse at sunset, at night and at dawn, with karaoke captions"></p>
 
 ---
 
@@ -53,7 +53,7 @@ If Windows blocks `silueta.exe`, run the same commands as `python -m silueta_stu
 Without a voice yet, `render --force` uses estimated timings (for tests only).
 With Claude Code, just open the folder and ask: *"make a 90-second video about <story>"* — the agents follow `CLAUDE.md`.
 
-<p align="center"><img src="docs/prova.png" width="600" alt="Contact sheet of the example story"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/silueta-studio/silueta-studio/main/docs/prova.png" width="600" alt="Contact sheet of the example story"></p>
 
 ### Rules the kit enforces
 Two independent sources per fact · no photos, logos or third-party characters · music and SFX only from files **you** own a licence for

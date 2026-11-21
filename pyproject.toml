@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "silueta-studio"
-version = "0.1.0"
+version = "0.1.1"
 description = "Vertical story videos with 2D silhouettes, rim light and karaoke captions, built for Claude Code."
 readme = "README.md"
 authors = [{ name = "Silueta Studio" }]

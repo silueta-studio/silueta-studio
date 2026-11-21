@@ -1,0 +1,15 @@
+name: Bug report
+description: Something does not work as documented
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes: {label: What happened?, description: "Command you ran and the full output."}
+    validations: {required: true}
+  - type: input
+    id: env
+    attributes: {label: Environment, placeholder: "Windows 11 / Python 3.12 / ffmpeg 7.1 / silueta-studio 0.1.0"}
+    validations: {required: true}
+  - type: textarea
+    id: extra
+    attributes: {label: Contact sheet or frame, description: "Drag `prova.png` or a frame here if it is a visual problem."}

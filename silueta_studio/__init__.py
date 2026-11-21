@@ -3,7 +3,7 @@
 Use in a story (cenas.py):
     from silueta_studio import cena, push, sky, terr, fg, fin, pessoa, card
 """
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 from .camara import Cam, fg, push, ridge, sky, terr
 from .canvas import R, addglow, blank, ease, font, full, grade, mask_full, smooth_noise, spring, vgrad, xf

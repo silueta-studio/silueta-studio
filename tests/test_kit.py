@@ -131,3 +131,8 @@ def test_render_paralelo_curto(tmp_path):
     info = json.loads(subprocess.check_output(["ffprobe", "-v", "error", "-show_entries", "format=duration:stream=width,height",
                                                "-of", "json", str(out)]))
     assert abs(float(info["format"]["duration"]) - 1.2) < 0.1 and info["streams"][0]["width"] == 1080
+    # sem voz gravada, o som fica «skipped» (não falha); com timing.json real e sem áudio, falha
+    assert not qa.has_audio(out)
+    assert qa.run(d, dynamic=False) in (True, False)            # corre sem rebentar
+    (d / "timing.json").write_text(json.dumps([{"id": "S01", "start": 0, "dur": 0.6}, {"id": "S02", "start": 0.6, "dur": 0.6}]), encoding="utf-8")
+    assert not qa.loudness(out)[0]
